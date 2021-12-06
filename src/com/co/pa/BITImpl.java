@@ -29,12 +29,12 @@ public class BITImpl implements BIT{
     }
 
     @Override
-    public boolean query(int index) {
-        return false;
+    public int query(int index) {
+        return 0;
     }
 
     @Override
-    public boolean query(int indexX, int indexY) {
-        return false;
+    public int query(int indexX, int indexY) {
+        return 0;
     }
 }
