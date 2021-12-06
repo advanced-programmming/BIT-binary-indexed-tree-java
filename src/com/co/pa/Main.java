@@ -7,8 +7,12 @@ public class Main {
         Vector<Integer> vector = AddValues(values);
         BIT bit = new BITImpl(vector);
         int result = bit.query(4, 5);
+        boolean update = bit.update(1, 10);
+        System.out.println(result);
+        System.out.println(update);
+        bit.printBITArray();
+        bit.printOrigin();
     }
-
 
     public static Vector<Integer> AddValues(int[] values){
         Vector<Integer> vector = new Vector<>();
