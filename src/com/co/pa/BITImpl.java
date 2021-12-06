@@ -26,19 +26,21 @@ public class BITImpl implements BIT{
 
     @Override
     public boolean update(int index, Object value) {
-        for(int i = index; i < arr.size(); index+= lowBit(index))
-            this.arr.set(i, arr.get(i) + java.lang.Integer.valueOf((int)value));
+        for(int i = index; index < arr.size(); index+= lowBit(index))
+            this.arr.set(index, arr.get(index) + java.lang.Integer.valueOf((int)value));
         return true;
     }
 
     @Override
     public int query(int index) {
-        return 0;
+        int result = 0;
+        for(int i = index; i > 0; i -= lowBit(index)) result += arr.get(index);
+        return result;
     }
 
     @Override
     public int query(int indexX, int indexY) {
-        return 0;
+        return query(indexY) + query(indexX - 1);
     }
 
     @Override
